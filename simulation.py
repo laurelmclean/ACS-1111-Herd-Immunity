@@ -12,10 +12,15 @@ class Simulation(object):
         # Remember to call the appropriate logger method in the corresponding parts of the simulation.
         
         # TODO: Store the virus in an attribute
+        self.virus = virus
         # TODO: Store pop_size in an attribute
+        self.pop_size = pop_size
         # TODO: Store the vacc_percentage in a variable
+        self.vacc_percentage = vacc_percentage
         # TODO: Store initial_infected in a variable
+        self.initial_infected = initial_infected
         # You need to store a list of people (Person instances)
+        self.people = []
         # Some of these people will be infected some will not. 
         # Use the _create_population() method to create the list and 
         # return it storing it in an attribute here. 
@@ -49,11 +54,13 @@ class Simulation(object):
 
         while should_continue:
             # TODO: Increment the time_step_counter
+            time_step_counter += 1
             # TODO: for every iteration of this loop, call self.time_step() 
+            self.time_step()
             # Call the _simulation_should_continue method to determine if 
             # the simulation should continue
             should_continue = self._simulation_should_continue()
-            pass
+  
 
         # TODO: Write meta data to the logger. This should be starting 
         # statistics for the simulation. It should include the initial

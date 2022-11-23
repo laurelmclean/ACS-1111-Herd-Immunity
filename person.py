@@ -17,9 +17,11 @@ class Person(object):
         if self.infection:
             if random_infection <= self.infection.mortality_rate:
                 self.is_alive = False
+                self.is_infected = False
             else:
                 self.is_vaccinated = True
                 self.is_alive = True
+                self.is_infected = False
 
             return self.is_alive
 
