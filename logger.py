@@ -1,3 +1,5 @@
+# A helper class for logging all events that happen in the simulation.
+
 class Logger(object):
     def __init__(self, file_name):
         # TODO:  Finish this initialization method. The file_name passed should be the

@@ -2,6 +2,7 @@ import random
 # random.seed(42)
 from virus import Virus
 
+# Represents the people that make up the population that the virus is spreading through.
 
 class Person(object):
     # Define a person. 
@@ -9,9 +10,17 @@ class Person(object):
         # A person has an id, is_vaccinated and possibly an infection
         self._id = _id  # int
         # TODO Define the other attributes of a person here
-        pass
+        self.is_vaccinated = is_vaccinated
+        self.infection = infection
 
     def did_survive_infection(self):
+        is_alive = True
+        if self.infection = None:
+            if random_number <= mortality_rate:
+                is_alive = False
+            else:
+                is_vaccinated = True
+                is_alive = True
         # This method checks if a person survived an infection. 
         # TODO Only called if infection attribute is not None.
         # Check generate a random number between 0.0 - 1.0

@@ -4,6 +4,7 @@ from person import Person
 from logger import Logger
 from virus import Virus
 
+# Highest level of abstraction. The main class that runs the entire simulation.
 
 class Simulation(object):
     def __init__(self, virus, pop_size, vacc_percentage, initial_infected=1):
