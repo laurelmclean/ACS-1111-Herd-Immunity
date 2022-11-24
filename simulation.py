@@ -42,7 +42,10 @@ class Simulation(object):
         # or if all of the living people have been vaccinated. 
         # TODO: Loop over the list of people in the population. Return True
         # if the simulation should continue or False if not.
-        pass
+        for person in self.population:
+            if person.is_alive == True and person.is_vaccinated == False:
+                return True
+        return False
 
     def run(self):
         # This method starts the simulation. It should track the number of 
