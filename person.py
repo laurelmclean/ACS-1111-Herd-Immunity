@@ -12,6 +12,7 @@ class Person(object):
         self.infection = infection #none by deafult
         self.is_alive = True #true because they start alive
 
+    # check if person survived infection and update is alivev, is infected, and is vaccainted based on interaction
     def did_survive_infection(self):
         random_infection = random.random()
         if self.infection:
@@ -75,7 +76,7 @@ if __name__ == "__main__":
     # Stretch challenge! 
     # Check the infection rate of the virus by making a group of 
     # unifected people. 
-    
+
     uninfected_people = []
     for i in range(1, 101):
         uninfected_people.append(Person(i, False))

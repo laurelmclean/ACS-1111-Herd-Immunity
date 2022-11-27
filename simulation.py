@@ -10,22 +10,14 @@ class Simulation(object):
     def __init__(self, virus, pop_size, vacc_percentage, initial_infected=1):
         # TODO: Create a Logger object and bind it to self.logger.
         # Remember to call the appropriate logger method in the corresponding parts of the simulation.
-        
-        # TODO: Store the virus in an attribute
+        self.logger = Logger('logger')
         self.virus = virus
-        # TODO: Store pop_size in an attribute
         self.pop_size = pop_size
-        # TODO: Store the vacc_percentage in a variable
         self.vacc_percentage = vacc_percentage
-        # TODO: Store initial_infected in a variable
         self.initial_infected = initial_infected
-        # You need to store a list of people (Person instances)
-        self.people = []
-        # Some of these people will be infected some will not. 
-        # Use the _create_population() method to create the list and 
-        # return it storing it in an attribute here. 
-        # TODO: Call self._create_population() and pass in the correct parameters.
-        pass
+        self.people = self._create_population()
+        self.newly_infected = []
+        
 
     def _create_population(self):
         # TODO: Create a list of people (Person instances). This list 
@@ -33,7 +25,18 @@ class Simulation(object):
         # Some of these people will be uninfected and some will be infected.
         # The number of infected people should be equal to the the initial_infected
         # TODO: Return the list of people
-        pass
+        people = []
+        id = 0
+        for infected_person in range(self.initial_infected):
+            infected_people = Person(id,False,self.virus)
+            people.append(infected_people)
+            id += 1
+        id = self.initial_infected + 1
+        for uninfected_person in range(self.pop_size - self.initial_infected):
+            uninfected_people = Person(id,False)
+            people.append(uninfected_people)
+            id += 1
+        return people
 
     def _simulation_should_continue(self):
         # This method will return a booleanb indicating if the simulation 
@@ -56,12 +59,8 @@ class Simulation(object):
         should_continue = True
 
         while should_continue:
-            # TODO: Increment the time_step_counter
             time_step_counter += 1
-            # TODO: for every iteration of this loop, call self.time_step() 
             self.time_step()
-            # Call the _simulation_should_continue method to determine if 
-            # the simulation should continue
             should_continue = self._simulation_should_continue()
   
 
@@ -86,6 +85,16 @@ class Simulation(object):
 
     def interaction(self, infected_person, random_person):
         # TODO: Finish this method.
+        if random_person.is_vaccinated == True:
+            pass
+        elif random_person.infection == True:
+            pass
+        else:
+            random_number = random.random()
+        if self.infection:
+            if random_number <= self.virus.repro_rate:
+                self.newly_infected.append(random_person._id)
+                self.total_infected += 1
         # The possible cases you'll need to cover are listed below:
             # random_person is vaccinated:
             #     nothing happens to random person.
@@ -97,7 +106,7 @@ class Simulation(object):
             #     Simulation object's newly_infected array, so that their infected
             #     attribute can be changed to True at the end of the time step.
         # TODO: Call logger method during this method.
-        pass
+        
 
     def _infect_newly_infected(self):
         # TODO: Call this method at the end of every time step and infect each Person.
