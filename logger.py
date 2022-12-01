@@ -41,27 +41,33 @@ class Logger(object):
         # represent all the possible edge cases. Use the values passed along with each person,
         # along with whether they are sick or vaccinated when they interact to determine
         # exactly what happened in the interaction and create a String, and write to your logfile.
-        file = open(self.file_name, 'a')
+        # file = open(self.file_name, 'a')
 
-        if did_infect == True:
-            file.write(f'\nPerson #{person._id} infected person #{random_person._id}')
-        elif random_person_vacc == True:
-            file.write(f'\nPerson #{person._id} did not infect Person #{random_person._id} because they are already vaccinated against the infection.')
-        elif random_person_sick == True:
-            file.write(f'\Person #{person._id} did not infect Person #{random_person._id} since they are already infected')
-        else:
-            file.write(f'\nPerson #{person._id} tried but did not infect person #{random_person._id}')
-        
-        file.close()
+        # file.write(f'\nTime step: {step_number}')
+        # file.write(f'\nNumber of interactions: {number_of_interactions}')
+        # file.write(f'\Number of new infections: {number_of_new_infections}')
+
+        # file.close()
+        pass
 
     def log_infection_survival(self, step_number, population_count, number_of_new_fatalities):
         # TODO: Finish this method. If the person survives, did_die_from_infection
         # should be False.  Otherwise, did_die_from_infection should be True.
         # Append the results of the infection to the logfile
+        # file = open(self.file_name, 'a')
+
+        # file.write(f'\nTime step: {step_number}')
+        # file.write(f'\nNumber of interactions: {number_of_interactions}')
+        # file.write(f'\Number of new infections: {number_of_new_infections}')
+
+        # file.close()
         pass
 
     def log_time_step(self, time_step_number):
         # 
+        pass
+
+    def final_data():
         pass
 
    

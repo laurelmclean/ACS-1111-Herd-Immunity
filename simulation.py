@@ -15,8 +15,9 @@ class Simulation(object):
         self.pop_size = pop_size
         self.vacc_percentage = vacc_percentage
         self.initial_infected = initial_infected
-        self.people = self._create_population()
+        self.population = self._create_population()
         self.newly_infected = []
+        self.average_interactions = 100
         
 
     def _create_population(self):
@@ -28,12 +29,12 @@ class Simulation(object):
         people = []
         id = 0
         for infected_person in range(self.initial_infected):
-            infected_people = Person(id,False,self.virus)
+            infected_people = Person(id, False, self.virus)
             people.append(infected_people)
             id += 1
         id = self.initial_infected + 1
         for uninfected_person in range(self.pop_size - self.initial_infected):
-            uninfected_people = Person(id,False)
+            uninfected_people = Person(id, False)
             people.append(uninfected_people)
             id += 1
         return people
@@ -47,6 +48,7 @@ class Simulation(object):
         # if the simulation should continue or False if not.
         for person in self.population:
             if person.is_alive == True and person.is_vaccinated == False:
+                print("Population still alive and unvaccinated")
                 return True
         return False
 
@@ -59,17 +61,26 @@ class Simulation(object):
         should_continue = True
 
         while should_continue:
+            print(f'TIME STEP: {time_step_counter}')
             time_step_counter += 1
             self.time_step()
+            self.logger.write_metadata(
+                self.pop_size, 
+                self.vacc_percentage, 
+                self.virus.name, 
+                self.virus.mortality_rate, 
+                self.virus.repro_rate)
             should_continue = self._simulation_should_continue()
-  
+    
 
         # TODO: Write meta data to the logger. This should be starting 
         # statistics for the simulation. It should include the initial
         # population size and the virus. 
+
         
         # TODO: When the simulation completes you should conclude this with 
         # the logger. Send the final data to the logger. 
+        # self.logger.final_data()
 
     def time_step(self):
         # This method will simulate interactions between people, calulate 
@@ -81,7 +92,11 @@ class Simulation(object):
         # have that person interact with 100 other living people 
         # Run interactions by calling the interaction method below. That method
         # takes the infected person and a random person
-        pass
+        for person in self.population:
+            if person.infection != None and person.is_alive:
+                random_interaction = random.sample(self.population, self.average_interactions)
+                for random_person in random_interaction:
+                    self.interaction(person, random_person)
 
     def interaction(self, infected_person, random_person):
         # TODO: Finish this method.
@@ -115,20 +130,19 @@ class Simulation(object):
         pass
 
 
-if __name__ == "__main__":
-    # Test your simulation here
-    virus_name = "Sniffles"
-    repro_num = 0.5
-    mortality_rate = 0.12
-    virus = Virus(virus_name, repro_num, mortality_rate)
 
-    # Set some values used by the simulation
-    pop_size = 1000
-    vacc_percentage = 0.1
-    initial_infected = 10
 
-    # Make a new instance of the imulation
-    virus = Virus(virus, pop_size, vacc_percentage, initial_infected)
-    sim = Simulation(pop_size, vacc_percentage, initial_infected, virus)
+virus_name = 'COVID'
+repro_rate = 0.5
+mortality_rate = 0.12
 
-    # sim.run()
+virus = Virus(virus_name, repro_rate, mortality_rate)
+
+population_size = 500
+vacc_percentage = 0.1
+initial_infected = 10
+
+sim = Simulation (virus, population_size, vacc_percentage, initial_infected)
+
+
+sim.run()
