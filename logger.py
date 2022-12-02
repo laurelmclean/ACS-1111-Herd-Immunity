@@ -36,46 +36,37 @@ class Logger(object):
         file.close()
 
 
-    def log_interactions(self, person, random_person, infected=False):
+    def log_interactions(self, time_step_counter, number_of_interactions, number_of_new_infections):
         # TODO: Finish this method. Think about how the booleans passed (or not passed)
         # represent all the possible edge cases. Use the values passed along with each person,
         # along with whether they are sick or vaccinated when they interact to determine
         # exactly what happened in the interaction and create a String, and write to your logfile.
         file = open(self.file_name, 'a')
-
-        file.write(f'Interactions with {person._id}:\n')
-        
-        if random_person.is_vaccinated == True:
-            file.write(f'{random_person._id} is vaccinated and was not infected.\n')
-        elif random_person.virus != None: 
-            file.write(f'{random_person._id} was already sick with the virus when interacting with {person._id}:.\n')
-        elif infected == True: 
-            file.write(f'{person._id} has infected {random_person._id}.\n')
-        else: 
-            file.write(f'{person._id} did not infect {random_person._id}.\n')
+        file = open(self.file_name, 'a')
+        file.write(f'\nTIME STEP {time_step_counter}.\n')
+        file.write(f'Number of Interactions: {number_of_interactions} \n')
+        file.write(f'New Infections:: {number_of_new_infections} \n')
 
         file.close()
 
-    def log_infection_survival(self, person, did_die_from_infection=False):
+    def log_infection_survival(self, time_step_counter, population_count, number_of_new_fatalities):
         # TODO: Finish this method. If the person survives, did_die_from_infection
         # should be False.  Otherwise, did_die_from_infection should be True.
         # Append the results of the infection to the logfile
         file = open(self.file_name, 'a')
-
-        file.write('Infection survival/death:\n')
-        if did_die_from_infection == False:
-            file.write(f'{person._id} survived the virus.\n')
-        else:
-            file.write(f'{person._id} did not survive the virus.\n')
-
+        file.write(f'\nTIME STEP {time_step_counter}.\n')
+        file.write(f'Number of ilving: {number_of_interactions} \n')
+        file.write(f'New Infections:: {number_of_new_infections} \n')
         file.close()
 
-    def log_time_step(self, time_step_number):
-        # 
-        pass
-
-    def final_data():
-        pass
+    def final_data(self, survivors, deaths, vaccinated, interactions, infections):
+        file = open(self.file_name, 'a')
+        file.write(f'\nsurvivors: {survivors}.\n')
+        file.write(f'Number of deaths: {deaths} \n')
+        file.write(f'New of vaccinated:: {vaccinated} \n')
+        file.write(f'Interactions: {interactions} \n')
+        file.write(f'Infections: {infections} \n')
+        file.close()
 
    
 test = Logger('test_log')

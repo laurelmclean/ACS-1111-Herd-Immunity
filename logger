@@ -2,5 +2,11 @@ Herd Immunity Simulation
 Virus name: COVID
 Reproduction Rate: 0.5%
 Mortality Rate: 0.12%
-Initial size of Population: 500
+Initial size of Population: 100
 Vaccination Rate: 0.1%
+
+survivors: 93.
+Number of deaths: 7 
+New of vaccinated:: 93 
+Interactions: 9727 
+Infections: 1208 
