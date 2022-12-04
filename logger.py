@@ -54,5 +54,3 @@ class Logger(object):
         file.close()
 
    
-test = Logger('test_log')
-test.write_metadata(11,12,'Virus',0.1,41)

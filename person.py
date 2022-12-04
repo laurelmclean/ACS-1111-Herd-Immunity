@@ -12,7 +12,7 @@ class Person(object):
         self.infection = infection #none by deafult
         self.is_alive = True #true because they start alive
 
-    # check if person survived infection and update is alivev, is infected, and is vaccainted based on interaction
+    # check if person survived infection and update is alive, is infected, and is vaccainted based on interaction
     def did_survive_infection(self):
         random_infection = random.random()
         if self.infection:
@@ -54,6 +54,14 @@ if __name__ == "__main__":
     assert infected_person.is_vaccinated is False
     assert infected_person.infection is virus
     print(infected_person.infection.name)
+
+    #additional person to test:
+    another_infected_person = Person(12, False, virus)
+    assert another_infected_person._id == 12
+    assert another_infected_person.is_alive is True
+    assert another_infected_person.is_vaccinated is False
+    assert another_infected_person.infection is virus
+    print(another_infected_person._id)
 
     # check the survival of an infected person. 
     people = []
