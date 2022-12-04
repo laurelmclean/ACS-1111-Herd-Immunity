@@ -43,7 +43,7 @@ if __name__ == "__main__":
     assert unvaccinated_person.infection is None
 
     # Create a Virus object to give a Person object an infection
-    virus = Virus("Dysentery", 0.7, 0.2)
+    virus = Virus("SmallPox", 5.8, 0.15)
     # Create a Person object and give them the virus infection
     infected_person = Person(3, False, virus)
     assert infected_person._id == 3

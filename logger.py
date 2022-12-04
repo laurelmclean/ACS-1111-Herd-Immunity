@@ -27,8 +27,8 @@ class Logger(object):
 
         # virus and population statistics
         file.write(f'Virus name: {virus_name}\n')
-        file.write(f'Reproduction Rate: {repro_rate}%\n')
-        file.write(f'Mortality Rate: {mortality_rate}%\n')
+        file.write(f'Reproduction Rate: {repro_rate}\n')
+        file.write(f'Mortality Rate: {mortality_rate * 100}%\n')
         file.write(f'Initial size of Population: {pop_size}\n')
         file.write(f'Vaccination Rate: {vacc_percentage}%\n')
         # add date and # of infected eople
@@ -43,29 +43,30 @@ class Logger(object):
         # exactly what happened in the interaction and create a String, and write to your logfile.
         file = open(self.file_name, 'a')
         file = open(self.file_name, 'a')
-        file.write(f'\nTIME STEP {time_step_counter}.\n')
+        file.write(f'\nTime Step: {time_step_counter}.\n')
         file.write(f'Number of Interactions: {number_of_interactions} \n')
-        file.write(f'New Infections:: {number_of_new_infections} \n')
+        file.write(f'New Infections: {number_of_new_infections} \n')
 
         file.close()
 
-    def log_infection_survival(self, time_step_counter, population_count, number_of_new_fatalities):
+    def log_infection_survival(self, time_step_counter, population_count, total_deaths):
         # TODO: Finish this method. If the person survives, did_die_from_infection
         # should be False.  Otherwise, did_die_from_infection should be True.
         # Append the results of the infection to the logfile
         file = open(self.file_name, 'a')
-        file.write(f'\nTIME STEP {time_step_counter}.\n')
-        file.write(f'Number of ilving: {number_of_interactions} \n')
-        file.write(f'New Infections:: {number_of_new_infections} \n')
+        file.write(f'\nTime Step: {time_step_counter}.\n')
+        file.write(f'Current number of survivors: {population_count} \n')
+        file.write(f'Current deaths:{total_deaths} \n')
         file.close()
 
-    def final_data(self, survivors, deaths, vaccinated, interactions, infections):
+    def final_data(self, survivors, deaths, vaccinated, interactions, infections, saved):
         file = open(self.file_name, 'a')
         file.write(f'\nsurvivors: {survivors}.\n')
         file.write(f'Number of deaths: {deaths} \n')
         file.write(f'New of vaccinated:: {vaccinated} \n')
         file.write(f'Interactions: {interactions} \n')
         file.write(f'Infections: {infections} \n')
+        file.write(f'Vaccines saved: {saved} \n')
         file.close()
 
    

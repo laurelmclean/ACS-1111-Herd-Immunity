@@ -1,12 +1,21 @@
 Herd Immunity Simulation
-Virus name: COVID
-Reproduction Rate: 0.5%
-Mortality Rate: 0.12%
+Virus name: Small Pox
+Reproduction Rate: 5.8
+Mortality Rate: 15.0%
 Initial size of Population: 100
-Vaccination Rate: 0.1%
+Vaccination Rate: 20%
 
-survivors: 93.
-Number of deaths: 7 
-New of vaccinated:: 93 
-Interactions: 9727 
-Infections: 1208 
+Time Step: 1.
+Number of Interactions: 400 
+New Infections: 76 
+
+Time Step: 1.
+Current number of survivors: 100 
+Current deaths:0 
+
+survivors: 100.
+Number of deaths: 0 
+New of vaccinated:: 4 
+Interactions: 400 
+Infections: 76 
+Vaccines saved: 86 
