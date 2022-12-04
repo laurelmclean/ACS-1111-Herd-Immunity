@@ -60,6 +60,7 @@ class Simulation(object):
         # steps the simulation has run and check if the simulation should 
         # continue at the end of each step. 
         # It also sends data to logger
+
         self.logger.write_metadata(self.pop_size, self.vacc_percentage, self.virus.name, self.virus.mortality_rate, self.virus.repro_rate)
 
         time_step_counter = 0

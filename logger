@@ -4,18 +4,27 @@ Reproduction Rate: 5.8
 Mortality Rate: 15.0%
 Initial size of Population: 100
 Vaccination Rate: 20%
+Date of Simulation: 2022-12-04
 
 Time Step: 1.
-Number of Interactions: 400 
-New Infections: 76 
+Number of Interactions: 298 
+Number of new Infections: 76 
 
 Time Step: 1.
-Current number of survivors: 100 
-Current deaths:0 
+Current number of survivors: 98 
+Current deaths: 2 
 
-survivors: 100.
-Number of deaths: 0 
-New of vaccinated:: 4 
-Interactions: 400 
-Infections: 76 
-Vaccines saved: 86 
+Time Step: 2.
+Number of Interactions: 6135 
+Number of new Infections: 0 
+
+Time Step: 2.
+Current number of survivors: 84 
+Current deaths: 16 
+
+Number of survivors: 84.
+Number of deaths: 16 
+Number of vaccinated people: 51 
+Total Interactions: 6135 
+Total Infections: 76 
+Number of interactions vaccines prevented infection: 2986 
