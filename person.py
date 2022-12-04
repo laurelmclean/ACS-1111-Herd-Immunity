@@ -26,6 +26,7 @@ class Person(object):
 
             return self.is_alive
 
+# Three additional tests on person class
 
 if __name__ == "__main__":
     # Define a vaccinated person and check their attributes
@@ -34,6 +35,7 @@ if __name__ == "__main__":
     assert vaccinated_person.is_alive is True
     assert vaccinated_person.is_vaccinated is True
     assert vaccinated_person.infection is None
+    print(vaccinated_person.is_vaccinated)
 
     # Create an unvaccinated person and test their attributes
     unvaccinated_person = Person(2, False)
@@ -41,6 +43,7 @@ if __name__ == "__main__":
     assert unvaccinated_person.is_alive is True
     assert unvaccinated_person.is_vaccinated is False
     assert unvaccinated_person.infection is None
+    print(unvaccinated_person.is_vaccinated)
 
     # Create a Virus object to give a Person object an infection
     virus = Virus("SmallPox", 5.8, 0.15)
@@ -50,6 +53,7 @@ if __name__ == "__main__":
     assert infected_person.is_alive is True
     assert infected_person.is_vaccinated is False
     assert infected_person.infection is virus
+    print(infected_person.infection.name)
 
     # check the survival of an infected person. 
     people = []
