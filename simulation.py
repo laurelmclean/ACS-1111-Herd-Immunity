@@ -8,20 +8,35 @@ from virus import Virus
 
 class Simulation(object):
     def __init__(self, virus, pop_size, vacc_percentage, initial_infected=1):
+        # created log file called 'logger'
         self.logger = Logger('logger')
+        # virus
         self.virus = virus
+        # initial population
         self.pop_size = pop_size
+        # percent of population vaccinated
         self.vacc_percentage = vacc_percentage
+        # initial number of infected
         self.initial_infected = initial_infected
+        # invoke create population method
         self.population = self._create_population()
+        # empty list to append newly infected
         self.newly_infected = []
+        # empty list to append newly dead
         self.dead_people = []
+        # average interactions is 100
         self.average_interactions = 100
+        # total interactions starts at 0
         self.total_interactions = 0
+        # total infected starts at 0
         self.total_infected = 0 
+        # total immune starts at 0
         self.total_immune = 0
+        # total newly dead for each time step starts at 0
         self.newly_dead = 0
+        # total dead starts at 0
         self.total_dead = 0
+        # number vaccines saves eaCh interaction
         self.saved = 0
         
 

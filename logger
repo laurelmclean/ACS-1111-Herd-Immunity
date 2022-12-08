@@ -7,32 +7,32 @@ Vaccination Rate: 20%
 Date of Simulation: 2022-12-07
 
 Time Step: 1.
-Number of Interactions: 400 
-Number of new Infections: 316 
+Number of Interactions: 300 
+Number of new Infections: 235 
 
 Time Step: 1.
 Current number of survivors: 9999 
 Current deaths: 1 
 
 Time Step: 2.
-Number of Interactions: 31900 
-Number of new Infections: 7338 
+Number of Interactions: 23700 
+Number of new Infections: 7020 
 
 Time Step: 2.
-Current number of survivors: 9959 
-Current deaths: 41 
+Current number of survivors: 9968 
+Current deaths: 32 
 
 Time Step: 3.
-Number of Interactions: 673100 
-Number of new Infections: 342 
+Number of Interactions: 642000 
+Number of new Infections: 741 
 
 Time Step: 3.
-Current number of survivors: 8941 
-Current deaths: 1059 
+Current number of survivors: 9025 
+Current deaths: 975 
 
-Number of survivors: 8941.
-Number of deaths: 1059 
-Number of vaccinated people: 5672 
-Total Interactions: 673100 
+Number of survivors: 9025.
+Number of deaths: 975 
+Number of vaccinated people: 5445 
+Total Interactions: 642000 
 Total Infections: 7996 
-Number of interactions vaccines prevented infection: 347862 
+Number of interactions vaccines prevented infection: 321365 
