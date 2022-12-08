@@ -131,7 +131,7 @@ mortality_rate = 0.15
 
 virus = Virus(virus_name, repro_rate, mortality_rate)
 
-population_size = 100
+population_size = 10000
 vacc_percentage = 20
 initial_infected = 4
 

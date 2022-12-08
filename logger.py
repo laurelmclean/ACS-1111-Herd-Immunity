@@ -17,7 +17,6 @@ class Logger(object):
         file.write(f'Reproduction Rate: {repro_rate}\n')
         file.write(f'Mortality Rate: {mortality_rate * 100}%\n')
         file.write(f'Initial size of Population: {pop_size}\n')
-        # file.write(f'Initial number of infected people: {initial_infected}\n')
         file.write(f'Vaccination Rate: {vacc_percentage}%\n')
         file.write(f'Date of Simulation: {today_date}\n')
                    

@@ -10,7 +10,7 @@ class Virus(object):
 
 # Test this class
 if __name__ == "__main__":
-    # Test your virus class by making an instance and confirming 
+    # Test virus class by making an instance and confirming 
     # it has the attributes you defined
 
     # two additional tests added

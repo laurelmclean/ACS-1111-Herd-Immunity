@@ -47,6 +47,7 @@ if __name__ == "__main__":
 
     # Create a Virus object to give a Person object an infection
     virus = Virus("SmallPox", 5.8, 0.15)
+    
     # Create a Person object and give them the virus infection
     infected_person = Person(3, False, virus)
     assert infected_person._id == 3

@@ -1,0 +1,22 @@
+Herd Immunity Simulation
+Virus name: Sniffles
+Reproduction Rate: 0.6
+Mortality Rate: 10.0%
+Initial size of Population: 100
+Vaccination Rate: 0.01%
+Date of Simulation: 2022-12-07
+
+Time Step: 1.
+Number of Interactions: 10 
+Number of new Infections: 3 
+
+Time Step: 2.
+Current number of survivors: 15 
+Current deaths: 3 
+
+Number of survivors: 30.
+Number of deaths: 12 
+Number of vaccinated people: 22 
+Total Interactions: 233 
+Total Infections: 12 
+Number of interactions vaccines prevented infection: 123 

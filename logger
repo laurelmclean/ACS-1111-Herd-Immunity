@@ -2,29 +2,37 @@ Herd Immunity Simulation
 Virus name: Small Pox
 Reproduction Rate: 5.8
 Mortality Rate: 15.0%
-Initial size of Population: 100
+Initial size of Population: 10000
 Vaccination Rate: 20%
-Date of Simulation: 2022-12-04
+Date of Simulation: 2022-12-07
 
 Time Step: 1.
-Number of Interactions: 298 
-Number of new Infections: 76 
+Number of Interactions: 400 
+Number of new Infections: 316 
 
 Time Step: 1.
-Current number of survivors: 98 
-Current deaths: 2 
+Current number of survivors: 9999 
+Current deaths: 1 
 
 Time Step: 2.
-Number of Interactions: 6135 
-Number of new Infections: 0 
+Number of Interactions: 31900 
+Number of new Infections: 7338 
 
 Time Step: 2.
-Current number of survivors: 84 
-Current deaths: 16 
+Current number of survivors: 9959 
+Current deaths: 41 
 
-Number of survivors: 84.
-Number of deaths: 16 
-Number of vaccinated people: 51 
-Total Interactions: 6135 
-Total Infections: 76 
-Number of interactions vaccines prevented infection: 2986 
+Time Step: 3.
+Number of Interactions: 673100 
+Number of new Infections: 342 
+
+Time Step: 3.
+Current number of survivors: 8941 
+Current deaths: 1059 
+
+Number of survivors: 8941.
+Number of deaths: 1059 
+Number of vaccinated people: 5672 
+Total Interactions: 673100 
+Total Infections: 7996 
+Number of interactions vaccines prevented infection: 347862 
