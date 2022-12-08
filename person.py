@@ -12,7 +12,7 @@ class Person(object):
         self.infection = infection #none by deafult
         self.is_alive = True #true because they start alive
 
-    # check if person survived infection and update is alivev, is infected, and is vaccainted based on interaction
+    # check if person survived infection and update is alive, is infected, and is vaccainted based on interaction
     def did_survive_infection(self):
         random_infection = random.random()
         if self.infection:
@@ -26,6 +26,7 @@ class Person(object):
 
             return self.is_alive
 
+# Three additional tests on person class
 
 if __name__ == "__main__":
     # Define a vaccinated person and check their attributes
@@ -34,6 +35,7 @@ if __name__ == "__main__":
     assert vaccinated_person.is_alive is True
     assert vaccinated_person.is_vaccinated is True
     assert vaccinated_person.infection is None
+    print(vaccinated_person.is_vaccinated)
 
     # Create an unvaccinated person and test their attributes
     unvaccinated_person = Person(2, False)
@@ -41,15 +43,26 @@ if __name__ == "__main__":
     assert unvaccinated_person.is_alive is True
     assert unvaccinated_person.is_vaccinated is False
     assert unvaccinated_person.infection is None
+    print(unvaccinated_person.is_vaccinated)
 
     # Create a Virus object to give a Person object an infection
-    virus = Virus("Dysentery", 0.7, 0.2)
+    virus = Virus("SmallPox", 5.8, 0.15)
+    
     # Create a Person object and give them the virus infection
     infected_person = Person(3, False, virus)
     assert infected_person._id == 3
     assert infected_person.is_alive is True
     assert infected_person.is_vaccinated is False
     assert infected_person.infection is virus
+    print(infected_person.infection.name)
+
+    #additional person to test:
+    another_infected_person = Person(12, False, virus)
+    assert another_infected_person._id == 12
+    assert another_infected_person.is_alive is True
+    assert another_infected_person.is_vaccinated is False
+    assert another_infected_person.infection is virus
+    print(another_infected_person._id)
 
     # check the survival of an infected person. 
     people = []
